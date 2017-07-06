@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service Grpc {
+  rpc GetImage (Name) returns (Image) {}
+}
+
+message Name {
+  string name = 1;
+}
+
+message Image {
+  bytes image = 1;
+}

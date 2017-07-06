@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+
+  div.container
+    div.row
+      div.col.s6
+          a#grpc.waves-effect.waves-light.btn gRPC
+          div
+            span#grpcTime
+            span ミリ秒
+          img#grpcImg(src='' width='200px')
+      div.col.s6
+          a#rest.waves-effect.waves-light.btn REST
+          div
+            span#restTime
+            span ミリ秒
+          img#restImg(src='' width='200px')
