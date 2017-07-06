@@ -11,7 +11,6 @@ router.all( '/*', function( req, res, next ) {
 } );
 
 router.get( '/:name', function( req, res, next ) {
-    console.log( IMG_DIR_PATH + req.params.name );
     fs.readFile( IMG_DIR_PATH + req.params.name, function( err, img ) {
         if ( err ) {
             res.send( err );

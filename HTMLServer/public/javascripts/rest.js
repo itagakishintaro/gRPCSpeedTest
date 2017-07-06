@@ -1,7 +1,8 @@
 $( '#rest' ).on( 'click', () => {
-    let start = new Date().getTime();
-    $( '#restImg' ).attr( 'src', '//localhost:3001/api/mountain.png' );
-    let stop = new Date().getTime();
-    console.log( stop, start, stop - start );
-    $( '#restTime' ).text( stop - start );
+    $.get( 'api/rest' ).done( ( data ) => {
+        $( '#restTime' ).text( data.time );
+        for ( let i = 0; i <= 9; i++ ) {
+            $( '#restImg' + i ).attr( 'src', 'data:image/png;base64,' + data[ 'b64image' + i ] );
+        }
+    } );
 } );

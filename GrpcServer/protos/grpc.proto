@@ -1,13 +1,22 @@
 syntax = "proto3";
 
 service Grpc {
-  rpc GetImage (Name) returns (Image) {}
+  rpc GetImages (Name) returns (Images) {}
 }
 
 message Name {
   string name = 1;
 }
 
-message Image {
-  bytes image = 1;
+message Images {
+  bytes image0 = 0;
+  bytes image1 = 1;
+  bytes image2 = 2;
+  bytes image3 = 3;
+  bytes image4 = 4;
+  bytes image5 = 5;
+  bytes image6 = 6;
+  bytes image7 = 7;
+  bytes image8 = 8;
+  bytes image9 = 9;
 }

@@ -1,7 +1,9 @@
 $( '#grpc' ).on( 'click', () => {
-    let start = new Date().getTime();
-    $( '#grpcImg' ).attr( 'src', 'api/grpc' );
-    let stop = new Date().getTime();
-    console.log( stop, start, stop - start );
-    $( '#grpcTime' ).text( stop - start );
+    $.get( 'api/grpc' ).done( ( data ) => {
+        $( '#grpcTime' ).text( data.time );
+        for ( let i = 0; i <= 9; i++ ) {
+            $( '#grpcImg' + i ).attr( 'src', 'data:image/png;base64,' + data[ 'b64image' + i ] );
+        }
+    } );
+
 } );
